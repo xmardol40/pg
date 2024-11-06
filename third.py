@@ -3,7 +3,7 @@ import math
 
 def je_prvocislo(cislo):
     """
-    Funkce overi, zda zadane cislo je nebo neni prvocislo a vrati True nebo False
+    Funkce overi, zda zadane cislo je nebo neni prvocislo a vrati True nebo False 
 
     Prvocislo je takove cislo vetsi nez 1, ktere neni delitelne zadnym jinym cislem jenom 1 a samo sebou.
 
