@@ -33,6 +33,7 @@ deset = "cet "
 desat = "desát "
 
 def cislo_text(cislo):
+    cislo = str(cislo)
     # funkce zkonvertuje cislo do jeho textove reprezentace
     # napr: "25" -> "dvacet pět", omezte se na cisla od 0 do 100
     #return "dvacet pět"
