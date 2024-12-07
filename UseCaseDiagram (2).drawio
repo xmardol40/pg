@@ -171,9 +171,6 @@
         <mxCell id="_SmTZkAmCU5QlVaPjLsI-51" value="vystavení faktury" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="310" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="_SmTZkAmCU5QlVaPjLsI-52" value="odeslání faktury" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="650" y="370" width="120" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="_SmTZkAmCU5QlVaPjLsI-63" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="670" y="490" as="sourcePoint" />
@@ -187,15 +184,9 @@
           <mxGeometry x="650" y="550" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="_SmTZkAmCU5QlVaPjLsI-55" value="kontrola odeslání fa" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="650" y="430" width="120" height="50" as="geometry" />
+          <mxGeometry x="660" y="390" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="_SmTZkAmCU5QlVaPjLsI-60" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.075;exitY=0.26;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="_SmTZkAmCU5QlVaPjLsI-52" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="668" y="333" as="sourcePoint" />
-            <mxPoint x="580" y="310" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="_SmTZkAmCU5QlVaPjLsI-61" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.075;exitY=0.26;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+        <mxCell id="_SmTZkAmCU5QlVaPjLsI-61" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0;exitY=0.34;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="_SmTZkAmCU5QlVaPjLsI-55">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="669" y="436.5" as="sourcePoint" />
             <mxPoint x="580" y="310" as="targetPoint" />
