@@ -1,7 +1,10 @@
 import sys
 import requests
-from lxml import html
+#from lxml import html
+from bs4 import BeautifulSoup
 
+
+#url = "https://www.ef.jcu.cz"
 
 def download_url_and_get_all_hrefs(url):
     """
@@ -10,10 +13,22 @@ def download_url_and_get_all_hrefs(url):
     pokud ano, najdete ve stazenem obsahu stranky response.content vsechny vyskyty
     <a href="url">odkaz</a> a z nich nactete url, ktere vratite jako seznam pomoci return
     """
-    response = requests.get(url)
     hrefs = []
-
+    response = requests.get(url)
+    if response.status_code == 200:
+        html_file = response.text
+        soup = BeautifulSoup(html_file, "html.parser")
+        #print(soup)
+        all_a = soup.find_all("a")
+        #print(all_a)
+        for one_a in all_a:
+            item = one_a.get("href")
+            #print(item)
+            hrefs.append(item) 
+            #print(hrefs)      
     return hrefs
+
+#download_url_and_get_all_hrefs(url)
 
 
 if __name__ == "__main__":
