@@ -1,33 +1,34 @@
-# vas program nacte ze souboru, ktery dostane jako argument z prikazove radky, text a vypise ho pozpatku
-# vytvorte funkce pozpatku(), ktera jako parametr bere text a vraci ho pozpatku tzn "ahoj" -> "joha"
-# osetrete chybove stavy pomoci try - except
-import sys
+# Příklad 1: Práce s podmínkami a cykly
+# Zadání:
+# Napište funkci `process_numbers`, která přijme seznam celých čísel. 
+# Funkce vrátí nový seznam, který obsahuje pouze čísla větší než 5, vynásobená 2.
+# Pokud seznam obsahuje číslo 10, ukončete zpracování seznamu a vraťte dosud vytvořený seznam.
 
-# def pozpatku(text):
-#     text_pozpatku = ""
-#     for pismeno in reversed(text):
-#         text_pozpatku += pismeno
-#     return text_pozpatku
+def process_numbers(numbers):
+    # ZDE NAPIŠTE VÁŠ KÓD
+    seznam = []
+    
+    for i in numbers:
+        if i == 10:
+            break
+        elif i > 5:
+            #print(i)
+            cislo = i*2
+            #print(cislo)
+            seznam.append(cislo)
+            #print(seznam)
+            #elif i == 10:
+            #pass
+                
+    return seznam
 
+#print(process_numbers([1, 6, 3, 10, 8]))
+        
+        
 
-def pozpatku(text):
-    text_pozpatku = ""
-    i = len(text) - 1
-    while i >= 0:
-        pismeno = text[i]
-        text_pozpatku += pismeno
-        i -= 1
-    return text_pozpatku
-
-
-if __name__ == "__main__":
-    try:
-        soubor = sys.argv[1]
-        with open(soubor, "r") as fp:
-            obsah = fp.read()
-            obracene = pozpatku(obsah)
-            print(obracene)
-    except IndexError:
-        print("Zadej nazev souboru")
-    except FileNotFoundError:
-        print("Soubor neexistuje")
+# Pytest testy pro Příklad 1
+def test_process_numbers():
+    assert process_numbers([1, 6, 3, 10, 8]) == [12]
+    assert process_numbers([7, 8, 10, 12]) == [14, 16]
+    assert process_numbers([1, 2, 3, 4]) == []
+    assert process_numbers([5, 6, 7, 15]) == [12, 14, 30]
