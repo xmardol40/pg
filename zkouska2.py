@@ -24,8 +24,28 @@ user_names = {
 }
 
 def fetch_and_save_data():
-    # ZDE NAPIŠTE VÁŠ KÓD
-    pass
+    try:
+        # Načtení dat z URL
+        response = requests.get("https://jsonplaceholder.typicode.com/posts")
+        if response.status_code == 200:
+            posts = response.json()
+            
+            # Přidání uživatelského jména podle userId
+            for post in posts:
+                user_id = post.get("userId")
+                post["userName"] = user_names.get(user_id, "Unknown User")
+            
+            # Uložení dat do souboru
+            with open("data.json", "w") as file:
+                json.dump(posts, file, indent=4)
+            return True
+        else:
+            print(f"Chyba při načítání dat: {response.status_code}")
+            return False
+    except Exception as e:
+        print(f"Došlo k chybě: {e}")
+        return False
+    
 
 # Pytest testy pro Příklad 2
 from unittest.mock import patch, MagicMock, mock_open
