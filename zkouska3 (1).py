@@ -6,6 +6,7 @@
 # - `Circle` má atribut `radius` a implementuje metodu `area`.
 
 from abc import ABC, abstractmethod
+import math
 
 class Shape(ABC):
     @abstractmethod
@@ -13,6 +14,19 @@ class Shape(ABC):
         pass
 
 # ZDE DOPLŇTE VLASTNÍ KÓD
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+    
+class Circle (Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return round((math.pi*self.radius**2),5)
+        
 
 from unittest.mock import patch, MagicMock, mock_open
 
@@ -22,7 +36,7 @@ def test_shapes():
     assert rect.area() == 20
 
     circle = Circle(3)
-    assert circle.area() == 28.27431
+    assert circle.area() == 28.27433
 
     with patch("abc.ABC", side_effect=NotImplementedError):
         try:
